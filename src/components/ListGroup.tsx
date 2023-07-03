@@ -5,7 +5,7 @@ interface Props {
     heading: string;
     onSelected: (item: String) => void;
 }
-function ListGroup({ items, heading }: Props) {
+function ListGroup({ items, heading, onSelected }: Props) {
     // items = [];
     // const handleClick = (event: MouseEvent) => {
     //     console.log(event);
@@ -24,7 +24,10 @@ function ListGroup({ items, heading }: Props) {
                                 : "list-group-item"
                         }
                         key={index}
-                        onClick={() => setSelectedIndex(index);onSelected(item);}
+                        onClick={() => {
+                            setSelectedIndex(index);
+                            onSelected(item);
+                        }}
                     >
                         {item}
                     </li>
