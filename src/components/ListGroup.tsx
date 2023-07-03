@@ -3,6 +3,7 @@ import { useState } from "react";
 interface Props {
     items: string[];
     heading: string;
+    onSelected: (item: String) => void;
 }
 function ListGroup({ items, heading }: Props) {
     // items = [];
@@ -23,7 +24,7 @@ function ListGroup({ items, heading }: Props) {
                                 : "list-group-item"
                         }
                         key={index}
-                        onClick={() => setSelectedIndex(index)}
+                        onClick={() => setSelectedIndex(index);onSelected(item);}
                     >
                         {item}
                     </li>
